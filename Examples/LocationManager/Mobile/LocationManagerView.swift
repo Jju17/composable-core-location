@@ -100,12 +100,12 @@ struct ContentView: View {
       )
       let locationManagerSubject = PassthroughSubject<LocationManager.Action, Never>()
       var locationManager = LocationManager.live
-      locationManager.authorizationStatus = { .authorizedAlways }
-      locationManager.delegate = { locationManagerSubject.eraseToEffect() }
-      locationManager.locationServicesEnabled = { true }
-      locationManager.requestLocation = {
-        .fireAndForget { locationManagerSubject.send(.didUpdateLocations([mockLocation])) }
-      }
+//      locationManager.authorizationStatus = { .authorizedAlways }
+//      locationManager.delegate = { locationManagerSubject.eraseToEffect() }
+//      locationManager.locationServicesEnabled = { true }
+//      locationManager.requestLocation = {
+//        .fireAndForget { locationManagerSubject.send(.didUpdateLocations([mockLocation])) }
+//      }
 
       let appView = LocationManagerView(
         store: Store(

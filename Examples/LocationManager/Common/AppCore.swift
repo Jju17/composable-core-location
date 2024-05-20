@@ -156,9 +156,10 @@ public let appReducer = AnyReducer<AppState, AppAction, AppEnvironment> {
     return .none
 
   case .onAppear:
-    return environment.locationManager.delegate()
-      .map(AppAction.locationManager)
-      .cancellable(id: LocationManagerId())
+//    return environment.locationManager.delegate()
+//      .map(AppAction.locationManager)
+//      .cancellable(id: LocationManagerId())
+    return .none
 
   case .onDisappear:
     return .cancel(id: LocationManagerId())
